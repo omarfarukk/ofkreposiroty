@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>Test Task CRX</title>
+</h:head>
+<h:body>
+	<h3>Calculate the volume of Water after rainfall</h3>
+	<h:form>
+		<h:inputText id="surfaceProfilesInput" value="#{helloBean.surfaceProfilesParam}" required="true" requiredMessage="Input must not be Empty" validator="#{helloBean.validateInput}">
+		</h:inputText>
+		<h:commandButton value="Calculate Water Volume" action="#{helloBean.calculateWaterValume}"></h:commandButton>
+		<h:messages style="color:red" globalOnly="true"/>
+		<p><b>Note:</b><i>Please provide the numbers in comma separated (1,2,3..)/ space separated(1 2 3...) Do not use any Mixed expression</i></p>
+		<p><b>Note:</b><i>If you have input 0-9, you may put input without any separator(123...)</i></p>
+		
+	</h:form>
+</h:body>
+</html>
