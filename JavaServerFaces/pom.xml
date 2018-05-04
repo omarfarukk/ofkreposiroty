@@ -96,7 +96,7 @@
 		<slf4jVersion>1.6.1</slf4jVersion>
 	</properties>
 	<build>
-		<finalName>JavaServerFaces</finalName>
+		<finalName>TestTaskJavaServerFaces</finalName>
 
 		<plugins>
 			<plugin>
