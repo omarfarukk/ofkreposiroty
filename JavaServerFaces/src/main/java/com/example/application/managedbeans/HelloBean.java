@@ -58,7 +58,7 @@ public class HelloBean implements Serializable {
 	public String calculateWaterValume() {
 		logger.info("calculateWaterValume() entered");
 		try {
-			this.surfaceProfiles = restControllerUtils.validateInputRequestAndConsturctInputArray(surfaceProfilesParam);
+			this.surfaceProfiles = restControllerUtils.consturctInputArray(surfaceProfilesParam);
 			this.waterVolume = volumeCalculator.calculateWaterVolume(this.surfaceProfiles);
 		}catch(Throwable th) {
 			logger.info("calculateWaterValume() Exiting with Exception",th);
