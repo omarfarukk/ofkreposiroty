@@ -23,7 +23,7 @@ import com.example.application.service.CalculatorService;
 @Singleton
 public class CalculatorServiceImpl implements CalculatorService {
 
-	private static Logger logger = LoggerFactory.getLogger(VolumeCalculatorImpl.class);
+	private static Logger logger = LoggerFactory.getLogger(CalculatorServiceImpl.class);
 	@EJB
 	Result result;
 	@EJB

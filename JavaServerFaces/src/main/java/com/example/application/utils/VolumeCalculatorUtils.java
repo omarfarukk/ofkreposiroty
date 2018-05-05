@@ -11,21 +11,31 @@ import com.example.application.managedbeans.HelloBean;
 @Singleton
 public class VolumeCalculatorUtils {
 	private static Logger logger = LoggerFactory.getLogger(VolumeCalculatorUtils.class);
+	/**
+	 *Calculates the highest bar left to each bar including the bar itself.
+	 * @param two  array. surfaceProfiles,leftArray (highest surface to the left of an surface)
+	 * @return the array containing highest bars to the left side of each element
+	 * */
 	public int[] calculateHighestLeftSurfaces(int[] surfaceProfiles, int[] leftArray) {
 		logger.info("Enetering calculateHighestLeftSurfaces() , Params : [{}]",surfaceProfiles);
 		leftArray[0] = surfaceProfiles[0];
 		for (int i = 1; i < surfaceProfiles.length; i++)
 			leftArray[i] = Math.max(leftArray[i - 1], surfaceProfiles[i]);
-		logger.info("Enetering calculateHighestLeftSurfaces() , Result : [{}]",leftArray);
+		logger.info("Exiting calculateHighestLeftSurfaces() , Result : [{}]",leftArray);
 		return leftArray;
 	}
 
+	/**
+	 *Calculates the highest bar right to each bar including the bar itself.
+	 * @param two  array. surfaceProfiles,rightArray (highest surface to the right of an surface)
+	 * @return the array containing highest bars to the right side of each element
+	 * */
 	public int[] calculateHighestRightSurfaces(int[] surfaceProfiles, int[] rightArray) {
 		logger.info("Enetering calculateHighestRightSurfaces() , Params : [{}]",surfaceProfiles);
 		rightArray[surfaceProfiles.length - 1] = surfaceProfiles[surfaceProfiles.length - 1];
 		for (int i = surfaceProfiles.length - 2; i >= 0; i--)
 			rightArray[i] = Math.max(rightArray[i + 1], surfaceProfiles[i]);
-		logger.info("Enetering calculateHighestRightSurfaces() , Result : [{}]",rightArray);
+		logger.info("Exiting calculateHighestRightSurfaces() , Result : [{}]",rightArray);
 		return rightArray;
 	}
 
