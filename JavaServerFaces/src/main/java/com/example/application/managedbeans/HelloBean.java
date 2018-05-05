@@ -30,7 +30,7 @@ public class HelloBean implements Serializable {
 	@EJB
 	private ApplicationValidator applicationValidator;
 	@EJB
-	CalculatorService volumeCalculator;
+	CalculatorService calculatorService;
 	@EJB
 	RestControllerUtils restControllerUtils;
 	@EJB
@@ -59,7 +59,7 @@ public class HelloBean implements Serializable {
 		logger.info("calculateWaterValume() entered");
 		try {
 			this.surfaceProfiles = restControllerUtils.consturctInputArray(surfaceProfilesParam);
-			this.waterVolume = volumeCalculator.calculateWaterVolume(this.surfaceProfiles);
+			this.waterVolume = calculatorService.calculateWaterVolume(this.surfaceProfiles);
 		}catch(Throwable th) {
 			logger.info("calculateWaterValume() Exiting with Exception",th);
 			FacesMessage message  = new FacesMessage(th.getCause().getMessage());
